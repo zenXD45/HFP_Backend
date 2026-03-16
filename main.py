@@ -44,9 +44,9 @@ def read_root():
 
 @app.post("/predict")
 def predict_risk(data: PatientData):
-    # Mapping ST_Slope based on typical heart failure dataset mapping
-    # Where Downsloping = 0, Flat = 1, Upsloping = 2
-    st_mapping = {"Down": 0, "Flat": 1, "Up": 2, "Downsloping": 0, "Upsloping": 2}
+    # Mapping ST_Slope based on model's training encoding
+    # Where Upsloping = 0, Flat = 1, Downsloping = 2
+    st_mapping = {"Down": 2, "Flat": 1, "Up": 0, "Downsloping": 2, "Upsloping": 0}
     st_val = st_mapping.get(data.stSlope, 1)
 
     features = {
