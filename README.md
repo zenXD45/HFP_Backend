@@ -301,10 +301,6 @@ The backend is live on Render:
 - **Build:** `pip install -r requirements.txt`
 - **Start:** Defined in `Procfile`
 
-The frontend connects via its `.env`:
-```
-VITE_API_URL=https://hfp-backend-bqml.onrender.com
-```
 
 To redeploy, just push to the connected Git repo:
 
